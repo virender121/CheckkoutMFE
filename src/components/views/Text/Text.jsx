@@ -34,7 +34,7 @@ export const Text = (props) => {
 
 export const propTypes = {
   variant: PropTypes.oneOf(["text-xs", "text-small"]),
-  price:PropTypes.Number
+ 
 };
 
 /**
@@ -46,7 +46,7 @@ export const propTypes = {
 
 export const defaultProps = {
   variant: "text-xs",
-  price : 67
+  
 };
 
 Text.propTypes = propTypes;

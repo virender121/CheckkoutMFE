@@ -14,23 +14,22 @@ import { VscAccount } from "react-icons/vsc";
  * @returns Header
  */
 
+
 export const Header = (props) => {
   return (
     <div className={classes.container}>
       <div className={classes.searchBar_div}>
-        <MyInput placeholder="Search for item" />
+        <MyInput placeholder="Search for item" className={classes.input}/>
       </div>
-      <div className={classes.icon_container}>
-        <div>
+      <div className={classes.iconcontainer}>
+     
           <VscAccount />
-        </div>
-        <div>
+  
           <BsHeart />
-        </div>
-        <div>
+     
           <BsCart3 />
-        </div>
-      </div>
+          </div>
+  
       <image src="" />
     </div>
   );

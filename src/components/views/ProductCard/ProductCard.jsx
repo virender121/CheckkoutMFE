@@ -12,12 +12,13 @@ import { Text } from "../Text/Text";
  */
 
 export const ProductCard = (props) => {
-  const { productImage, vendor, productName } = props;
+  const { productImage, vendor, productName, productPrice} = props;
   return (
     <div className={classes.container}>
       <img src={productImage} />
-      <Text variant="text-xs">{vendor}</Text>
+      <Text variant="text-sm">{vendor}</Text>
       <Text variant="heading-sm">{productName}</Text>
+      <Text>{productPrice}</Text>
     </div>
   );
 };
@@ -28,11 +29,13 @@ export const ProductCard = (props) => {
  * @type {object}
  * @property {string} example - shows example - delete for in use
  */
-     
+
 export const propTypes = {
   productImage: PropTypes.string,
   productName: PropTypes.string,
   vendor: PropTypes.string,
+  productPrice:PropTypes.number
+  
 };
 
 /**
@@ -46,6 +49,7 @@ export const defaultProps = {
   productImage: "https://thumbs.dreamstime.com/z/banana-bunch-19074568.jpg",
   vendor: "Hodo Foods",
   productName: "Seeds of Change Organic Quinoa, Brown, & Red Rice",
+  productPrice : '100 rs'
 };
 
 ProductCard.propTypes = propTypes;
