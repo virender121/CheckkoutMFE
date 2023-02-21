@@ -12,7 +12,7 @@ import classes from "./Text.module.css";
  */
 
 export const Text = (props) => {
-  const { children, variant = "text-xs" } = props;
+  const { children, variant = "text-xs" ,price} = props;
   console.log({ variant ,ty: typeof variant});
   return (
     <p
@@ -20,6 +20,7 @@ export const Text = (props) => {
       ${variant?.includes("text") && classes["text-weight"]}`}
     >
       {children}
+      {price}
     </p>
   );
 };
@@ -33,6 +34,7 @@ export const Text = (props) => {
 
 export const propTypes = {
   variant: PropTypes.oneOf(["text-xs", "text-small"]),
+  price:PropTypes.Number
 };
 
 /**
@@ -44,6 +46,7 @@ export const propTypes = {
 
 export const defaultProps = {
   variant: "text-xs",
+  price : 67
 };
 
 Text.propTypes = propTypes;

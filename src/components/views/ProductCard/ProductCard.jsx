@@ -28,7 +28,7 @@ export const ProductCard = (props) => {
  * @type {object}
  * @property {string} example - shows example - delete for in use
  */
-
+     
 export const propTypes = {
   productImage: PropTypes.string,
   productName: PropTypes.string,
