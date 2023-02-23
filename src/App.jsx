@@ -4,7 +4,7 @@ import Header from "./components/views/Header/Header";
 import LoginPage from "./components/views/LoginPage/LoginPage";
 import Navbar from "./components/views/Navbar/Navbar";
 import Hero from './components/views/Hero/Hero'
-import { ProductCard } from "./components/views/ProductCard/ProductCard";
+import ProductCard from "HomePageMFE/ProductCard";
 import "./index.css";
 import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 import CheckoutPage from "./components/views/CheckoutPage/CheckoutPage";
