@@ -1,5 +1,5 @@
 .container {
-  background-color: gray;
+  background-color: lightgrey;
   border-radius: var(--bd-radius);
   overflow: hidden;
   padding: 1.25rem;

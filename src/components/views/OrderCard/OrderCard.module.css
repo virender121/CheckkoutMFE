@@ -1,0 +1,70 @@
+.container {
+    height: 557.233642578125px;
+width: 606.9561157226562px;
+left: 1145.044921875px;
+top: 454px;
+border-radius: 15px;
+
+box-sizing: border-box;
+
+position: absolute;
+width: 606.96px;
+height: 557.23px;
+left: 1145.04px;
+top: 454px;
+
+/* NestMart-White */
+
+background: #FFFFFF;
+/* NestMart-BorderColor-1 */
+
+border: 1px solid #E5E5E5;
+/* Shadow-2 */
+
+box-shadow: 5px 5px 15px rgba(24, 24, 24, 0.05);
+border-radius: 15px
+
+}
+.orange{
+    height: 73px;
+width: 91px;
+left: 13.16796875px;
+top: 21.3157958984375px;
+border-radius: 0px;
+
+}
+
+.text{
+    height: 51.04824447631836px;
+width: 173.3070068359375px;
+left: 132.6796875px;
+top: 32.7303466796875px;
+border-radius: nullpx;
+color: #253D4E;
+font-family: Quicksand;
+font-style: Bold;
+font-size: 16px,
+/* line-height: 20px, */
+/* Line-height: 100%, */
+/* Align: Left, */
+/* Vertical-align: Top, */
+/* Letter-spacing: -0.04% */
+}
+
+.lemon{
+    height: 70px;
+width: 101px;
+left: 6.16796875px;
+top: 168.3157958984375px;
+border-radius: 0px;
+
+}
+
+.mutton{
+    height: 60px;
+width: 98px;
+left: 9.16796875px;
+top: 324.3157958984375px;
+border-radius: 0px;
+
+}

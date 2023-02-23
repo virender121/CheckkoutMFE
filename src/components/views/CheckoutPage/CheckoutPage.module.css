@@ -1,0 +1,104 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: 42.02901077270508px;
+    width: 280.4384765625px;
+    left: 171.005859375px;
+    top: 322.301025390625px;
+    border-radius: nullpx;
+    
+/* border-radius: [object Object]px; */
+
+}
+
+.left{
+
+    box-sizing: border-box;
+
+    position: absolute;
+    width: 445px;
+    height: 64px;
+    left: 168px;
+    top: 642.76px;
+    
+    /* NestMart-White */
+    
+    background: #FFFFFF;
+    /* NestMart-Brand 1 */
+    
+    /* border: 1px solid #3BB77E; */
+    border-radius: 10px;
+
+
+
+}
+.right{
+    
+    position:absolute;
+    height: 64px;
+width: 445px;
+left: 637.001953125px;
+top: 642.7559814453125px;
+border-radius: 10px;
+border: 1px solid #E5E5E5;
+
+
+}
+.word{
+    
+    position:absolute;
+    height: 208.30892944335938px;
+width: 913.998046875px;
+left: 168.001953125px;
+top: 1082.0428466796875px;
+border-radius: 10px;
+border: 1px solid #E5E5E5;
+
+
+}
+.payment{
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    margin-left: 83rem;
+    margin-top: 20rem;
+}
+
+.pay{
+    height: 15.341766357421875px;
+width: 32.09058380126953px;
+left: 23.361328125px;
+top: 4.5546875px;
+border-radius: 0px;
+
+
+}
+
+.visa{
+    height: 18.956666946411133px;
+width: 58.57466125488281px;
+left: 0.619140625px;
+top: 0.5240478515625px;
+border-radius: 0px;
+
+}
+.logo{
+    height: 30.801740646362305px;
+width: 24.78292465209961px;
+left: 0.15625px;
+top: 0.0318603515625px;
+border-radius: 0px;
+
+}
+
+.zapper{
+    height: 19.047618865966797px;
+width: 79.9753646850586px;
+left: 0px;
+top: 0.7847900390625px;
+border-radius: 0px;
+/* margin-left: 90rem; */
+/* margin-top: 20rem; */
+
+}

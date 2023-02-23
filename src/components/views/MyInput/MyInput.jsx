@@ -42,7 +42,7 @@ export const propTypes = {
  */
 
 export const defaultProps = {
-    example:'MyInput'
+    example:'Your email address'
 };
 
 MyInput.propTypes = propTypes;

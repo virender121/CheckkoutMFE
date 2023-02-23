@@ -13,7 +13,7 @@ import classes from './MyButton.module.scss';
  * @returns MyButton
  */
 
-export const MyButton = (props: MyButtonProps) => {
+export const MyButton = (props) => {
     return (
         <div className={classes.container}>
             {props.example}
@@ -39,7 +39,7 @@ export const propTypes = {
  * @property {string} example='MyButton 
  */
 
-export const defaultProps: MyButtonProps = {
+export const defaultProps = {
     example:'MyButton'
 };
 
