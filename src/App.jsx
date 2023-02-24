@@ -10,6 +10,8 @@ import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 import CheckoutPage from "./components/views/CheckoutPage/CheckoutPage";
 import Footer from "./components/views/Footer/Footer";
 
+
+
 const App = () => (
   <div >
      <Header />

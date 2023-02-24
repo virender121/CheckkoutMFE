@@ -3,8 +3,6 @@ import PropTypes from 'prop-types'
 
 import classes from './Exp.module.scss';
 
-
-
 /**
  * Impliments Exp component
  * 
