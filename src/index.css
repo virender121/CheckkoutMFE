@@ -11,6 +11,11 @@
 :root {
   --bd-radius: 1rem;
   --font-family: "Montserrat", sans-sarif;
+  @media screen and (max-width: 768px) {
+    width: 100vw;
+    height: 100%;
+    
+  }
 }
 html{
   position: relative;
@@ -18,4 +23,6 @@ html{
   height: 5264px;
 
   background: #FFFFFF;
+
+ 
 }
