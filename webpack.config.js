@@ -1,8 +1,12 @@
-const HtmlWebPackPlugin = require("html-webpack-plugin");
-const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
 
+const HtmlWebPackPlugin = require("html-webpack-plugin");
+const dotenv = require("dotenv");
+const ModuleFederationPlugin = require("webpack/lib/container/ModuleFederationPlugin");
+const Dotenv = require('dotenv-webpack');
+
+dotenv.config()
 const deps = require("./package.json").dependencies;
-module.exports = {
+module.exports = (env) => ({
   output: {
     publicPath: "http://localhost:3003/",
   },
@@ -40,32 +44,34 @@ module.exports = {
     ],
   },
 
-  plugins: [
-    new ModuleFederationPlugin({
-      name: "CheckoutPageMFE",
-      filename: "remoteEntry.js",
-      remotes: {
-        HomePageMFE : 'HomePageMFE@http://localhost:3001/remoteEntry.js',
-        LoginPageMFE : 'LoginPageMFE@http://localhost:3002/remoteEntry.js',
-        ProductPageMFE : 'ProductPageMFE@http://localhost:3004/remoteEntry.js',
+  plugins: [new Dotenv(),
+
+  new ModuleFederationPlugin({
+    name: "ProductPageMFE",
+    filename: "remoteEntry.js",
+    remotes: {
+      HomePageMFE: `HomePageMFE@${process.env.HomePageMFE}remoteEntry.js`,
+      LoginPageMFE: `LoginPageMFE@${process.env.LoginPageMFE}remoteEntry.js`,
+      ProductPageMFE: `ProductPageMFE@${process.env.ProductPageMFE}remoteEntry.js`,
+    },
+    exposes: {
+      './CheckoutPage': './src/components/views/CheckoutPage/CheckoutPage.jsx',
+      './useMfeStore': './src/utils/zustand.jsx'
+    },
+    shared: {
+      ...deps,
+      react: {
+        singleton: true,
+        requiredVersion: deps.react,
       },
-      exposes: {
-       
+      "react-dom": {
+        singleton: true,
+        requiredVersion: deps["react-dom"],
       },
-      shared: {
-        ...deps,
-        react: {
-          singleton: true,
-          requiredVersion: deps.react,
-        },
-        "react-dom": {
-          singleton: true,
-          requiredVersion: deps["react-dom"],
-        },
-      },
-    }),
-    new HtmlWebPackPlugin({
-      template: "./src/index.html",
-    }),
+    },
+  }),
+  new HtmlWebPackPlugin({
+    template: "./src/index.html",
+  }),
   ],
-};
+});
