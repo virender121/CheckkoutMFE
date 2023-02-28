@@ -1,35 +1,35 @@
-.container {
+/* /* .container {
     /* position: relative;  */
- width: 64rem;
+ /* width: 64rem;
 height: 151.43rem;
 
-background: #FFFFFF; 
+background: #FFFFFF;  */
 
 /* border-radius: [object Object]px;
 
 /* width: 100%; */
-padding: 1rem;
+/* padding: 1rem;
 font-size: 1.2rem
 }
-.body{
+.body{ */
     /* position: absolute; */
-    width: 63rem;
+    /* width: 63rem;
     height: 66.56rem;
     left: 10.30rem;
-    top: 20.143rem;
-    
+    top: 20.143rem; */
+/*     
 }
-.header{
+.header{ */
     /* position: absolute; */
-width: 17.53rem;
+/* width: 17.53rem;
 height: 5.151rem;
 left: 10.68rem;
 top: 20.143rem;
 
 }
-.Textheading{
+.Textheading{ */
     /* position: absolute; */
-    width: 17.52rem;
+    /* width: 17.52rem;
     height: 2.62rem;
     left: 10.68rem;
     top: 20.143rem;
@@ -41,9 +41,9 @@ top: 20.143rem;
     letter-spacing: -0.0004em;
     color: #253D4E;
 }
-.Textheading2{
+.Textheading2{ */
     /* position: absolute; */
-width: 15.93rem;
+/* width: 15.93rem;
 height: 1.25rem;
 left: 10.68rem;
 top: 24.04rem;
@@ -73,23 +73,23 @@ color: #7E7E7E;
     border-radius: 0.12rem;
     
 }
-.group1{
+.group1{ */
     /* position: absolute; */
-width: 20.56rem;
+/* width: 20.56rem;
 height: 1.5rem;
 left: 14rem;
 top: 29.125rem;
 
 }
-.user{
+.user{ */
     /* position: absolute; */
-width: 1rem;
+/* width: 1rem;
 height: 1rem;
 left: 14rem;
-top: 29.375rem;
+top: 29.375rem; */
 
-}
-.text{
+/* } */
+/* .text{
     
 width: 19.125rem;
 height: 1.5rem;
@@ -124,13 +124,13 @@ height: 3.125rem;
 left: 31.43rem;
 top: 28.37rem;
 }
-.group2{
+.group2{ */
     /* width: 9.916rem;
 height: 3.125;
 left: 57.70rem;
 top: 28.37rem; */
 
-}
+/* }
 .komal{
     display: flex;
     flex-direction: row;
@@ -142,9 +142,9 @@ left: 57.70rem;
 top: 28.37rem;
 background: #253D4E;
 border-radius: 0rem 0.2rem 0.2rem 0rem;
-margin-left: 17.8rem;
+margin-left: 17.8rem; */
 /* margin-bottom: 2.5rem; */
-}
+/* }
 .text10{
     width: 6.687rem;
 height: 1.25rem;
@@ -183,22 +183,22 @@ margin-top: 0.5rem;
 /* height: 24px; */
 /* left: 686.97px; */
 /* top: 467.33px; */
-font-family: 'Lato';
+/* font-family: 'Lato';
 font-style: normal;
 font-weight: 400;
-font-size: 1rem;
+font-size: 1rem; */
 /* line-height: 24px; */
-display: flex;
+/* display: flex;
 justify-content: center;
  margin-left: 3.5rem;
  
 
 color: #B6B6B6;
 
-}
+} */
 
 
-
+/* 
 .left{
 
     box-sizing: border-box;
@@ -211,15 +211,15 @@ color: #B6B6B6;
     
     /* NestMart-White */
     
-    background: #FFFFFF;
+    /* background: #FFFFFF; */
     /* NestMart-Brand 1 */
     
     /* border: 1px solid #3BB77E; */
-    border-radius: 0.25rem;
+    /* border-radius: 0.25rem; */
 
 
 
-}
+/* }
 .right{
     
     position:absolute;
@@ -232,18 +232,18 @@ border: 1px solid #E5E5E5;
 
 
 }
-.word{
+.word{ */
     
     /* position:absolute; */
-    height: 13.019rem;
+    /* height: 13.019rem;
 width: 57.124rem;
 left: 10.5rem;
 top: 67rem;
 border-radius: 0.2rem;
-border: 1px solid #E5E5E5;
+border: 1px solid #E5E5E5; */
 /* margin-right: 15rem; */
 
-
+/* 
 }
 .payid{
     display: flex;
@@ -264,22 +264,22 @@ border: 1px solid #E5E5E5;
     width: 15.25rem;
     height: 1.5rem;
     left: 73rem;
-    top: 73rem;
+    top: 73rem; */
    /* display: flex; */
    /* flex-direction: row; */
-    font-family: 'Lato';
+    /* font-family: 'Lato';
     font-style: normal;
     font-weight: 400;
     font-size: 1rem;
     line-height: 1.25rem;
     text-align: center;
-    color: #7E7E7E;
+    color: #7E7E7E; */
     
 
-}
-.bank{
+/* }
+.bank{ */ 
     /* position: absolute; */
-width: 15.8rem;
+/* width: 15.8rem;
 height: 1.35rem;
 left: 73rem;
 top: 71rem;
@@ -291,8 +291,8 @@ line-height: 1.25rem;
 text-align: center;
 color: #253D4E;
 
-}
-.payhead{
+} */
+/* .payhead{
     width: 6.5rem;
     height: 2rem;
     left: 1rem;
@@ -388,9 +388,9 @@ left: 71rem;
 top: 82rem;
 width: 15.5rem;
 left: 0rem;
-top: 0.rem;
+top: 0.rem;  */
 /* border-radius: [object Object]px; */
-}
+/* }
 .add{
     left: 20.72%;
     right: 33.47%;
@@ -409,14 +409,14 @@ top: 0.rem;
 
     
 }
-.icon{
-    width: 1rem;
+.icon{ */
+    /* width: 1rem;
 height: 1rem; 
 left: 11.25rem; 
 top: 1rem;
 
-}
-
+}  */
+/* 
 .card{
     display: flex;
     margin-left: 70rem;
@@ -426,33 +426,34 @@ top: 1rem;
 .acount{
    
      /* margin-top: 50rem; */
-     display: flex;
-     flex-direction: column;
+     /* display: flex; */
+     /* flex-direction: column; */
      /* align-items: center; */
-     margin-top: 1rem;
+     /* margin-top: 1rem; */
      /* margin-right: 25rem; */
-}
-.bill{
-    width: 9.75rem;
+
+/* .bill{
+
+    width: 20.75rem;
 height: 2rem;
 left: 10.3rem;
-top: 35.625rem;
+top: 35.625rem; */
 
 /* NestMart/Heading 4 */
 
-font-family: 'Quicksand';
+/* font-family: 'Quicksand';
 font-style: normal;
 font-weight: 700;
 font-size: 1.5rem;
-line-height: 2rem;
+line-height: 2rem; */ 
 /* identical to box height, or 133% */
 
-letter-spacing: -0.0004em;
+/* letter-spacing: -0.0004em;
 margin-left: 25rem;
-margin-bottom: 15rem;
+margin-bottom: 15rem; */
 /* NestMart-TextHeading */
 
-color: #253D4E;
+/* color: #253D4E;
 
 }
 @media screen and (max-width: 600px) {
@@ -460,4 +461,18 @@ color: #253D4E;
         width: 100%;
         height: 100%;
     }
-}
+} */ 
+html {
+    font-size: 14px;
+  }
+  @media (min-width: 768px) {
+    html {
+      font-size: 16px;
+    }
+  }
+  .container {
+    max-width: 960px;
+  }
+  .border-top { border-top: 1px solid #e5e5e5; }
+  .border-bottom { border-bottom: 1px solid #e5e5e5; }
+  .box-shadow { box-shadow: 0 .25rem .75rem rgba(0, 0, 0, .05); }

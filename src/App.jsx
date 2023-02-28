@@ -20,15 +20,23 @@ const App = () => {
   },[])
   return(
   <div >
-     {/* <Header />
-    {/* <Navbar /> */}
+     {/* <Header />*/}
+     <Navbar /> 
     {/* <ProductCard /> */}
     {/* <LoginPage /> */}
     {/* <RegisterPage /> */}
     {/* <Hero/> */} 
     {matches&& <CheckoutPage/>}
     {!matches&& <CheckoutPage/>}
+{/* 
+    {/* <Routes>
+    <Route path='/login' element={<LoginPage />} />
+            <Route path='/signIn' element={<RegisterPage />} />
+            <Route path='/product' element={<SingleProductPage />} />
+            <Route path='/checkout' element={<CheckoutPage/>} />
+    </Routes> */}
     {/* <Footer/> */}
+
     {/* <OrderCard/> */}
 
   </div>

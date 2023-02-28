@@ -28,7 +28,7 @@ export const Footer = (props) => {
               <h2>{heading}</h2></Text>
            <h4 className={classes.heading2}>{heading2}</h4> 
              
-              <MyInput placeholder={placeholder} className={classes.input}/><MyButton className={classes.button}/></div>
+              <MyInput placeholder={placeholder} className={classes.input}/></div>
               <img className={classes.apple} src={apple}/>
         </div>
             <div className={classes.footer}>

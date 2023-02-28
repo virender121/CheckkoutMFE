@@ -1,4 +1,4 @@
-import React from 'react'
+import React,{useState} from 'react'
 import PropTypes from 'prop-types'
 import { Text } from "../Text/Text";
 import classes from './CheckoutPage.module.css';
@@ -13,6 +13,8 @@ import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined
 import SellOutlinedIcon from '@mui/icons-material/SellOutlined';
 import Breadcrumb from '../Breadcrumb/Breadcrumb';
 import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import Footer from '../Footer/Footer';
 
 
 
@@ -25,165 +27,263 @@ import LogoutOutlinedIcon from '@mui/icons-material/LogoutOutlined';
  */
 
 export const CheckoutPage = (props) => {
-    
+      const[checkoutInput,setCheckoutInput]=useState({
+        firstname: '',
+        lastname: '',
+        address1: '',
+        state:'',
+        country: '',
+        postCode: '',
+        email: '',
+        additionalInformation: '',
+        city: '',
+        address2:'',
+        phoneNo: '',
+        company: ''
+
+
+
+
+      })
+
+   
+      
     return (
-      <>
-        <div className={classes.container}>
-          <Breadcrumb/>
-             <div calssName={classes.body}>
-             {/* <Text variant="heading-sm">{checkoutName}</Text> */}
-             <div className={classes.header}>
-              <h2 className={classes.Textheading}>Checkout</h2>
-              <h6 className={classes.Textheading2}>There are 3 products in your cart</h6>
-             </div>
-             <div className={classes.rectangle1}>
-                
-                <span className={classes.group1}>< PersonOutlineOutlinedIcon className={classes.user}/><h6 className={classes.text}>Already have an account? <span style={{color:'#3BB77E'}}>Click here to login</span></h6></span>
-             </div>
-             <div className={classes.Coupon}>
-             <div className={classes.rectangle2}/>
-             <div className={classes.group2}><SellOutlinedIcon className={classes.tag}/><h6 className={classes.card1}>Coupon Code</h6><div className={classes.rectangle3}><span className={classes.text10}>Apply Coupon</span></div></div>
-             </div>
-             <div className={classes.bill}><Text variant='heading-md'>Billing Details</Text></div>
-             
-             <div className={classes.left}>
-             <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="First name"
-              label="First name"
-            
-            />
-              <TextField
-              margin="normal"
-              required
-              fullWidth
-              label="Address 1"
-           
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              label="State/Country"
-          
-            />
-             <TextField
-              margin="normal"
-              required
-              fullWidth
-            //   name="Last name"
-              label="Postcode/Zip"
-            
-            />
-             <TextField
-              margin="normal"
-              required
-              fullWidth
-            //   name="Last name"
-              label="Email"
-           
-            />
-            
-            <input
-              margin="normal"
-              required
-              fullWidth
-            //   name="Last name"
-              placeholder="            Additional information"
-              className={classes.word}
-            />
-              <div className={classes.acount}>
-              <FormControlLabel
-              control={<Checkbox value="create" color="primary" />}
-              label="Create an account?"
-            />
-            
-             <FormControlLabel
-              control={<Checkbox value="create" color="primary" />}
-              label="Ship to a different address?"
-            />
-            </div>
-            </div>
-            <div className={classes.right}>
-             <TextField
-              margin="normal"
-              required
-              fullWidth
-            //   name="Last name"
-              label="Last name"
-            />
-             <TextField
-              margin="normal"
-              required
-              fullWidth
-            //   name="Last name"
-              label="Address line2"
-
-            />
-             <TextField
-              margin="normal"
-              required
-              fullWidth
-            //   name="Last name"
-              label="City/Town"
-            // 
-            />
-             <TextField
-              margin="normal"
-              required
-              fullWidth
-        
-              label="Phone number"
-            />
-             <TextField
-              margin="normal"
-              required
-              fullWidth
-            //   name="Last name"
-              label="Company"
-            
-            />
-             
-             
-           </div>
-           
-          <div className={classes.card}><OrderCard/></div> 
-           
-        </div>
-        <div className={classes.payid}>
-        <div className={classes.payment}><h4 className={classes.payhead}>Payment</h4>
-        <FormControl>
-    <div  className={classes.radio}>
-
-      <RadioGroup
-        aria-labelledby="demo-controlled-radio-buttons-group"
-        name="controlled-radio-buttons-group"
     
-      >
-        <FormControlLabel  className={classes.bank} value='bank' control={<Radio />} label="Direct bank transfer" />
-        <FormControlLabel className ={classes.cash} value='cash' control={<Radio />} label="Cash on delivery" />
-      </RadioGroup>
+      <div className="maincontainer">
+       <div class="d-flex flex-column flex-md-row align-items-center p-3 px-md-4 mb-3 bg-white border-bottom box-shadow">
+          <h5 class="my-0 mr-md-auto font-weight-normal">Company name</h5>
+          <nav class="my-2 my-md-0 mr-md-3">
+            <a class="p-2 text-dark" href="#">Features</a>
+            <a class="p-2 text-dark" href="#">Enterprise</a>
+            <a class="p-2 text-dark" href="#">Support</a>
+            <a class="p-2 text-dark" href="#">Pricing</a>
+          </nav>
+          <a class="btn btn-outline-primary" href="#">Sign up</a>
+        </div>
+        <div class="container">
+          <div class="py-5 text-center">
+            
+            <h2>Checkout form</h2>
+            <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+          </div>
+
+          <div class="row">
+            <div class="col-md-4 order-md-2 mb-4">
+              <h4 class="d-flex justify-content-between align-items-center mb-3">
+                <span class="text-muted">Your cart</span>
+                <span class="badge badge-secondary badge-pill">3</span>
+              </h4>
+              <ul class="list-group mb-3">
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div>
+                    <h6 class="my-0">Product name</h6>
+                    <small class="text-muted">Brief description</small>
+                  </div>
+                  <span class="text-muted">$12</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div>
+                    <h6 class="my-0">Second product</h6>
+                    <small class="text-muted">Brief description</small>
+                  </div>
+                  <span class="text-muted">$8</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between lh-condensed">
+                  <div>
+                    <h6 class="my-0">Third item</h6>
+                    <small class="text-muted">Brief description</small>
+                  </div>
+                  <span class="text-muted">$5</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between bg-light">
+                  <div class="text-success">
+                    <h6 class="my-0">Promo code</h6>
+                    <small>EXAMPLECODE</small>
+                  </div>
+                  <span class="text-success">-$5</span>
+                </li>
+                <li class="list-group-item d-flex justify-content-between">
+                  <span>Total (USD)</span>
+                  <strong>$20</strong>
+                </li>
+              </ul>
+
+              <form class="card p-2">
+                <div class="input-group">
+                  <input type="text" class="form-control" placeholder="Promo code"/>
+                  <div class="input-group-append">
+                    <button type="button" class="btn btn-secondary">Redeem</button>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="col-md-8 order-md-1">
+              <h4 class="mb-3">Billing address</h4>
+              <form class="needs-validation" novalidate>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="firstName">First name</label>
+                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required />
+                    <div class="invalid-feedback">
+                      Valid first name is required.
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="lastName">Last name</label>
+                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required />
+                    <div class="invalid-feedback">
+                      Valid last name is required.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="username">Username</label>
+                  <div class="input-group">
+                    <div class="input-group-prepend">
+                      <span class="input-group-text">@</span>
+                    </div>
+                    <input type="text" class="form-control" id="username" placeholder="Username" required />
+                    <div class="invalid-feedback">
+                      Your username is required.
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="email">Email <span class="text-muted">(Optional)</span></label>
+                  <input type="email" class="form-control" id="email" placeholder="you@example.com" />
+                  <div class="invalid-feedback">
+                    Please enter a valid email address for shipping updates.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="address">Address</label>
+                  <input type="text" class="form-control" id="address" placeholder="1234 Main St" required />
+                  <div class="invalid-feedback">
+                    Please enter your shipping address.
+                  </div>
+                </div>
+
+                <div class="mb-3">
+                  <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                  <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" />
+                </div>
+
+                <div class="row">
+                  <div class="col-md-5 mb-3">
+                    <label for="country">Country</label>
+                    <select class="custom-select d-block w-100" id="country" required>
+                      <option value="">Choose...</option>
+                      <option>United States</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please select a valid country.
+                    </div>
+                  </div>
+                  <div class="col-md-4 mb-3">
+                    <label for="state">State</label>
+                    <select class="custom-select d-block w-100" id="state" required>
+                      <option value="">Choose...</option>
+                      <option>California</option>
+                    </select>
+                    <div class="invalid-feedback">
+                      Please provide a valid state.
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <label for="zip">Zip</label>
+                    <input type="text" class="form-control" id="zip" placeholder="" required />
+                    <div class="invalid-feedback">
+                      Zip code required.
+                    </div>
+                  </div>
+                </div>
+                <hr class="mb-4" />
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="same-address" />
+                  <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                </div>
+                <div class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" id="save-info" />
+                  <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                </div>
+                <hr class="mb-4" />
+
+                <h4 class="mb-3">Payment</h4>
+
+                <div class="d-block my-3">
+                  <div class="custom-control custom-radio">
+                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required />
+                    <label class="custom-control-label" for="credit">Credit card</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required />
+                    <label class="custom-control-label" for="debit">Debit card</label>
+                  </div>
+                  <div class="custom-control custom-radio">
+                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required />
+                    <label class="custom-control-label" for="paypal">Paypal</label>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-6 mb-3">
+                    <label for="cc-name">Name on card</label>
+                    <input type="text" class="form-control" id="cc-name" placeholder="" required />
+                    <small class="text-muted">Full name as displayed on card</small>
+                    <div class="invalid-feedback">
+                      Name on card is required
+                    </div>
+                  </div>
+                  <div class="col-md-6 mb-3">
+                    <label for="cc-number">Credit card number</label>
+                    <input type="text" class="form-control" id="cc-number" placeholder="" required />
+                    <div class="invalid-feedback">
+                      Credit card number is required
+                    </div>
+                  </div>
+                </div>
+                <div class="row">
+                  <div class="col-md-3 mb-3">
+                    <label for="cc-expiration">Expiration</label>
+                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required />
+                    <div class="invalid-feedback">
+                      Expiration date required
+                    </div>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <label for="cc-expiration">CVV</label>
+                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required />
+                    <div class="invalid-feedback">
+                      Security code required
+                    </div>
+                  </div>
+                </div>
+                <hr class="mb-4" />
+                <button class="btn btn-primary btn-lg btn-block" type="button">Continue to checkout</button>
+              </form>
+            </div>
+          </div>
+
+          {/* <footer class="my-5 pt-5 text-muted text-center text-small">
+            <p class="mb-1">&copy; 2020-2021 therichpost.com</p>
+            <ul class="list-inline">
+              <li class="list-inline-item"><a href="#">Privacy</a></li>
+              <li class="list-inline-item"><a href="#">Terms</a></li>
+              <li class="list-inline-item"><a href="#">Support</a></li>
+            </ul>
+          </footer> */}
+          <Footer/>
+        </div>
+     
       </div>
-    </FormControl>
-    <div className={classes.paymentlogo}>
-    <span className={classes.log}>
-     <img  className={classes.pay} src='https://w7.pngwing.com/pngs/782/863/png-transparent-paypal-logo-paypal-logo-paypal-blue-text-trademark-thumbnail.png'/>
-     <img className={classes.visa} src='https://assets.stickpng.com/images/58482363cef1014c0b5e49c1.png'/>
-     <img className={classes.logo}  src='https://e7.pngegg.com/pngimages/169/96/png-clipart-logo-mastercard-graphics-font-visa-mastercard-text-label.png'/>
-     <img className={classes.zapper}  src='https://www.logolynx.com/images/logolynx/c5/c57071df5dbbbbd9ad4129db3a5cff32.png'/>
-     </span>
-    </div>
-    <div calssName={classes.place} style={{marginTop:'5rem'}}><div className={classes.add}>Place an Order<LogoutOutlinedIcon className={classes.icon}/></div></div>
-    
-  
-            </div>
-    </div>
-        </div>
-        </>
+      
+
     )
 }
+
 
 /**
  * Property type definations

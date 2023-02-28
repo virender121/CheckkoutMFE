@@ -56,7 +56,7 @@ module.exports = (env) => ({
     },
     exposes: {
       './CheckoutPage': './src/components/views/CheckoutPage/CheckoutPage.jsx',
-      './useMfeStore': './src/utils/zustand.jsx'
+      // './useMfeStore': './src/utils/zustand.jsx'
     },
     shared: {
       ...deps,

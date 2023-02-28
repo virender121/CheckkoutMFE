@@ -53,6 +53,7 @@
     "@emotion/styled": "^11.10.6",
     "@mui/icons-material": "^5.11.9",
     "@mui/material": "^5.11.10",
+    "bootstrap": "^5.2.3",
     "mdb-react-ui-kit": "^5.1.0",
     "mdbootstrap": "^4.20.0",
     "react": "^17.0.2",
