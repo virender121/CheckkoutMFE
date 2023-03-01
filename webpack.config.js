@@ -47,7 +47,7 @@ module.exports = (env) => ({
   plugins: [new Dotenv(),
 
   new ModuleFederationPlugin({
-    name: "ProductPageMFE",
+    name: "CheckoutPageMFE",
     filename: "remoteEntry.js",
     remotes: {
       HomePageMFE: `HomePageMFE@${process.env.HomePageMFE}remoteEntry.js`,
