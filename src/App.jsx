@@ -1,15 +1,8 @@
 import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
-import Header from "./components/views/Header/Header";
-import LoginPage from "./components/views/LoginPage/LoginPage";
-import Navbar from "./components/views/Navbar/Navbar";
-import Hero from './components/views/Hero/Hero'
-import ProductCard from "HomePageMFE/ProductCard";
-import "./index.css";
-import RegisterPage from "./components/views/RegisterPage/RegisterPage";
 import CheckoutPage from "./components/views/CheckoutPage/CheckoutPage";
-import Footer from "./components/views/Footer/Footer";
-import OrderCard from "./components/views/OrderCard/OrderCard";
+import Navbar from "HomePageMFE/Navbar";
+import "./index.css";
 
 const App = () => {
   const [matches, setMatches] = useState(
