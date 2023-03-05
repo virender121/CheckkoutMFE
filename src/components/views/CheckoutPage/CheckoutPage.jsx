@@ -1,7 +1,6 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import useMfeStore from 'LoginPageMFE/useMfeStore';
 import React, { useState } from 'react';
-import Footer from 'HomePageMFE/Footer';
 
 
 
@@ -16,230 +15,188 @@ import Footer from 'HomePageMFE/Footer';
 export const CheckoutPage = (props) => {
   // const { useMfeStore, updateCount } = props;
   console.log({ props })
-  const [checkoutInput, setCheckoutInput] = useState({
-    firstname: '',
-    lastname: '',
-    address1: '',
-    state: '',
-    country: '',
-    postCode: '',
-    email: '',
-    additionalInformation: '',
-    city: '',
-    address2: '',
-    phoneNo: '',
-    company: ''
-  })
+ 
+  const [address, setAddress]= useState('')
+  
   const [checkout, setCheckout] = React.useState(false)
   const cart = useMfeStore(state => state.cart)
-  const count = useMfeStore(state => state.count)
-  const unsub1 = useMfeStore.subscribe(console.log)
   const removeFromCart = useMfeStore(state => state.removeFromCart)
   const checkoutCart = useMfeStore(state => state.checkoutCart)
 
   const handleCheckoutCart = () => {
+    if(!address){
+      
+      window.alert('Please fill all the details.')
+      
+    }else {
+    window.alert(address)
     checkoutCart();
-    setCheckout(true)
+    setCheckout(true);
+    }
   }
   return (
     <>
+    <div style={{marginBottom: '4rem',  backgroundImage: "linear-gradient(#D3D3D3,#F5F5F5)"}}>
       {checkout ? <>
-        <div class="py-5 text-center">
+        <div className="py-5 text-center">
           <h1>Thank you for shopping with us</h1>
+          <h3>your order will be delievred in 3 Working Days in your address:{address}</h3>
         </div></> :
         <div className="maincontainer">
-          <div class="py-5 text-center">
-
+          <div className="py-5 text-center">
+           
             <h2>Checkout form</h2>
-            <p class="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+            <p className="lead">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
           </div>
 
-          {cart.cartItems.length > 0 ? <div class="row">
-            <div class="col-md-4 order-md-2 mb-4">
-              <h4 class="d-flex justify-content-between align-items-center mb-3">
-                <span class="text-muted">Your cart</span>
-                <span class="badge badge-secondary badge-pill">{cart.cartItems.length}</span>
+          {cart.cartItems.length > 0 ? <div className="row">
+            <div className="col-md-4 order-md-2 mb-2">
+              <h4 className="d-flex justify-content-between align-items-center mb-3">
+                <span className="text-muted">Your cart</span>
+                <span className="badge badge-secondary badge-pill">{cart.cartItems.length}</span>
               </h4>
-              <ul class="list-group mb-3">
-                {cart.cartItems.map(item => <li class="list-group-item d-flex justify-content-between lh-condensed">
+              <ul className="list-group mb-3">
+                {cart.cartItems.map(item => <li className="list-group-item d-flex justify-content-between lh-condensed">
                   <div onClick={() => removeFromCart(item)}>
-                    <h6 class="my-0">{item.productName} X {item.quantity} (Click to delete item)</h6>
-                    <small class="text-muted">{item.description}</small>
+                    <h6 className="my-0">{item.productName} X {item.quantity} (Click to delete item)</h6>
+                    <small className="text-muted">{item.description}</small>
                   </div>
-                  <span class="text-muted">${item.price}</span>
+                  <span className="text-muted">₹{item.price}</span>
                 </li>)}
-                <li class="list-group-item d-flex justify-content-between">
+                <li className="list-group-item d-flex justify-content-between">
                   <span>Subtotal</span>
-                  <strong>${cart.pricingDetails.subtotal}</strong>
+                  <strong>₹{cart.pricingDetails.subtotal}</strong>
                 </li>
-                <li class="list-group-item d-flex justify-content-between">
+                <li className="list-group-item d-flex justify-content-between">
                   <span>Delivery Charges</span>
-                  <strong>${cart.pricingDetails.deliveryCharges}</strong>
+                  <strong>₹{cart.pricingDetails.deliveryCharges}</strong>
                 </li>
-                <li class="list-group-item d-flex justify-content-between">
-                  <span>Total (USD)</span>
-                  <strong>${cart.pricingDetails.total}</strong>
+                <li className="list-group-item d-flex justify-content-between">
+                  <span>Total (INR)</span>
+                  <strong>₹{cart.pricingDetails.total}</strong>
                 </li>
               </ul>
-
-              <form class="card p-2">
-                <div class="input-group">
-                  <input type="text" class="form-control" placeholder="Promo code" />
-                  <div class="input-group-append">
-                    <button type="button" class="btn btn-secondary">Redeem</button>
-                  </div>
-                </div>
-              </form>
             </div>
-            <div class="col-md-8 order-md-1">
-              <h4 class="mb-3">Billing address</h4>
-              <form class="needs-validation" novalidate>
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="firstName">First name</label>
-                    <input type="text" class="form-control" id="firstName" placeholder="" value="" required />
-                    <div class="invalid-feedback">
+            <div className="col-md-8 order-md-1">
+              <h4 className="mb-3">Billing address</h4>
+              <form className="needs-validation" noValidate>
+                <div className="row">
+                  <div className="col-md-5 mb-3">
+                    <label htmlFor="firstName">First name</label>
+                    <input type="text" className="form-control" id="firstName" placeholder="First Name" required 
+               />
+                    <div className="invalid-feedback">
                       Valid first name is required.
                     </div>
                   </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="lastName">Last name</label>
-                    <input type="text" class="form-control" id="lastName" placeholder="" value="" required />
-                    <div class="invalid-feedback">
+                  <div className="col-md-5 mb-3">
+                    <label htmlFor="lastName">Last name</label>
+                    <input type="text" className="form-control" id="lastName" placeholder="Last Name" required 
+                     />
+                    <div className="invalid-feedback">
                       Valid last name is required.
                     </div>
                   </div>
                 </div>
 
-                <div class="mb-3">
-                  <label for="username">Username</label>
-                  <div class="input-group">
-                    <div class="input-group-prepend">
-                      <span class="input-group-text">@</span>
+                <div className="col-md-10 mb-3">
+                  <label htmlFor="username">Username</label>
+                  <div className="input-group">
+                    <div className="input-group-prepend">
+                      <span className="input-group-text">@</span>
                     </div>
-                    <input type="text" class="form-control" id="username" placeholder="Username" required />
-                    <div class="invalid-feedback">
+                    <input type="text" className="form-control" id="username" placeholder="Username" required />
+                    <div className="invalid-feedback">
                       Your username is required.
                     </div>
                   </div>
                 </div>
-
-                <div class="mb-3">
-                  <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                  <input type="email" class="form-control" id="email" placeholder="you@example.com" />
-                  <div class="invalid-feedback">
-                    Please enter a valid email address for shipping updates.
-                  </div>
-                </div>
-
-                <div class="mb-3">
-                  <label for="address">Address</label>
-                  <input type="text" class="form-control" id="address" placeholder="1234 Main St" required />
-                  <div class="invalid-feedback">
+                <div className=" col-md-10 mb-3">
+                  <label htmlFor="address">Address</label>
+                  <input type="text" className="form-control" id="address" placeholder="1234 Main St" value={address}
+                  onChange={(e)=>setAddress(e.target.value) } required />
+                  <div className="invalid-feedback">
                     Please enter your shipping address.
                   </div>
                 </div>
 
-                <div class="mb-3">
-                  <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-                  <input type="text" class="form-control" id="address2" placeholder="Apartment or suite" />
-                </div>
-
-                <div class="row">
-                  <div class="col-md-5 mb-3">
-                    <label for="country">Country</label>
-                    <select class="custom-select d-block w-100" id="country" required>
+                <div className="row">
+                  <div className="col-md-4 mb-3">
+                    <label htmlFor="country">Country</label>
+                    <select className="custom-select d-block w-100" id="country" required>
                       <option value="">Choose...</option>
-                      <option>United States</option>
+                      <option>India</option>
+                    
                     </select>
-                    <div class="invalid-feedback">
+                    <div className="invalid-feedback">
                       Please select a valid country.
                     </div>
                   </div>
-                  <div class="col-md-4 mb-3">
-                    <label for="state">State</label>
-                    <select class="custom-select d-block w-100" id="state" required>
+                  <div className="col-md-4 mb-3">
+                    <label htmlFor="state">State</label>
+                    <select className="custom-select d-block w-100" id="state" required>
                       <option value="">Choose...</option>
-                      <option>California</option>
+                      <option>Delhi</option>
+                      <option>punjab</option>
+                      <option>karnatka</option>
+                      <option>himachal Pradesh</option>
+                      <option>Uttar Pradesh</option>
+                      <option>Maharashtra</option>
+                      <option>Andhra Pradesh</option>
+                      <option>Tamil Nadu</option>
+                      <option>Assam</option>
+                      <option>Kerala</option>
+                      <option>Bihar</option>
+                      <option>Gujarat</option>
                     </select>
-                    <div class="invalid-feedback">
+                    <div className="invalid-feedback">
                       Please provide a valid state.
                     </div>
                   </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="zip">Zip</label>
-                    <input type="text" class="form-control" id="zip" placeholder="" required />
-                    <div class="invalid-feedback">
+                  <div className="col-md-3 mb-3">
+                    <label htmlFor="zip">Zip</label>
+                    <input type="number" className="form-control" id="zip" placeholder="" required />
+                    <div className="invalid-feedback">
                       Zip code required.
                     </div>
                   </div>
                 </div>
-                <hr class="mb-4" />
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="same-address" />
-                  <label class="custom-control-label" for="same-address">Shipping address is the same as my billing address</label>
+                <hr className="col-md-11 mb-4" />
+                <div className="custom-control custom-checkbox">
+                  <input type="checkbox" className="custom-control-input" id="same-address" />
+                  <label className="custom-control-label"htmlFor="same-address">Shipping address is the same as my billing address</label>
                 </div>
-                <div class="custom-control custom-checkbox">
-                  <input type="checkbox" class="custom-control-input" id="save-info" />
-                  <label class="custom-control-label" for="save-info">Save this information for next time</label>
+                <div className="custom-control custom-checkbox">
+                  <input type="checkbox" className="custom-control-input" id="save-info" />
+                  <label className="custom-control-label"htmlFor="save-info">Save this information for next time</label>
                 </div>
-                <hr class="mb-4" />
+                <hr className="col-md-11 mb-4" />
 
-                <h4 class="mb-3">Payment</h4>
+                <h4 className="mb-3">Payment</h4>
 
-                <div class="d-block my-3">
-                  <div class="custom-control custom-radio">
-                    <input id="credit" name="paymentMethod" type="radio" class="custom-control-input" checked required />
-                    <label class="custom-control-label" for="credit">Credit card</label>
+                <div className="d-block my-3">
+                  <div className="custom-control custom-radio">
+                    <input id="credit" name="paymentMethod" type="radio" className="custom-control-input" checked required />
+                    <label className="custom-control-label" htmlFor="credit">Credit card</label>
                   </div>
-                  <div class="custom-control custom-radio">
-                    <input id="debit" name="paymentMethod" type="radio" class="custom-control-input" required />
-                    <label class="custom-control-label" for="debit">Debit card</label>
+                  <div className="custom-control custom-radio">
+                    <input id="debit" name="paymentMethod" type="radio" className="custom-control-input" required />
+                    <label className="custom-control-label"htmlFor="debit">Debit card</label>
                   </div>
-                  <div class="custom-control custom-radio">
-                    <input id="paypal" name="paymentMethod" type="radio" class="custom-control-input" required />
-                    <label class="custom-control-label" for="paypal">Paypal</label>
-                  </div>
-                </div>
-                <div class="row">
-                  <div class="col-md-6 mb-3">
-                    <label for="cc-name">Name on card</label>
-                    <input type="text" class="form-control" id="cc-name" placeholder="" required />
-                    <small class="text-muted">Full name as displayed on card</small>
-                    <div class="invalid-feedback">
-                      Name on card is required
-                    </div>
-                  </div>
-                  <div class="col-md-6 mb-3">
-                    <label for="cc-number">Credit card number</label>
-                    <input type="text" class="form-control" id="cc-number" placeholder="" required />
-                    <div class="invalid-feedback">
-                      Credit card number is required
-                    </div>
+                  <div className="custom-control custom-radio">
+                    <input id="paypal" name="paymentMethod" type="radio" className="custom-control-input" required />
+                    <label className="custom-control-label"htmlFor="paypal">Paypal</label>
                   </div>
                 </div>
-                <div class="row">
-                  <div class="col-md-3 mb-3">
-                    <label for="cc-expiration">Expiration</label>
-                    <input type="text" class="form-control" id="cc-expiration" placeholder="" required />
-                    <div class="invalid-feedback">
-                      Expiration date required
-                    </div>
-                  </div>
-                  <div class="col-md-3 mb-3">
-                    <label for="cc-expiration">CVV</label>
-                    <input type="text" class="form-control" id="cc-cvv" placeholder="" required />
-                    <div class="invalid-feedback">
-                      Security code required
-                    </div>
-                  </div>
-                </div>
-                <hr class="mb-4" />
-                <button class="btn btn-primary btn-lg btn-block" type="button" onClick={() => handleCheckoutCart()}>Continue to checkout</button>
+               
+                <hr className="col-md-11 mb-4" />
+                <button className="btn btn-primary btn-lg btn-block" type="button" onClick={() => handleCheckoutCart()}>Continue to checkout</button>
               </form>
             </div>
-          </div> : <h1>No items cart</h1>}
+          </div> :
+          <h1>No items cart</h1>}
         </div>}
+        </div>
     </>
 
   )

@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import ReactDOM from "react-dom";
 import CheckoutPage from "./components/views/CheckoutPage/CheckoutPage";
 import Navbar from "HomePageMFE/Navbar";
+import Footer from "HomePageMFE/Footer";
 import "./index.css";
 
 const App = () => {
@@ -15,7 +16,7 @@ const App = () => {
     <div >
       <Navbar />
       <CheckoutPage />
-
+       <Footer/>
 
     </div>
   );
